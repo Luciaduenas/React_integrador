@@ -32,7 +32,7 @@ export const CartContainer = styled.div `
 `
 
 export const DisplayDiv = styled.div` 
-    display:none;
+    display:flex;
 `
 
 export const MenuContainer = styled.div `
@@ -51,7 +51,7 @@ export const NabvarLinksContainer = styled.div`
     justify-content: space-between;
     gap: 2rem;
     @media (max-width: 768px) {
-        display: none;
+        display: flex;
         position: absolute;
         top: 100px;
         right: 0;

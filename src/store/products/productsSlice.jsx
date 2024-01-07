@@ -3,6 +3,7 @@ import { products2 } from "../../data/products/products";
 
 const INITIAL_STATE = {
     products: products2,
+    limit: 3,
 }
 
 export const productsSlice = createSlice({
@@ -11,9 +12,17 @@ export const productsSlice = createSlice({
     reducers: {
         getProducts: state => {
             return state;
-        }
+        },
+        setProductLimit: (state) => {
+            return {
+                ...state,
+                limit: limit+3,
+            }
+            }
+        },
     }
-})
+)
 
-export const {getProducts} = productsSlice.actions
+
+export const {getProducts, setProductLimit} = productsSlice.actions
 export default productsSlice.reducer

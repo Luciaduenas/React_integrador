@@ -37,7 +37,8 @@ export const CategoriesContainer = styled.div`
 export const StyledCategoryButton = styled.div`
     padding: 0.8rem;
     outline: none;
-    border: none;
+    border: ${({ selected }) =>
+        selected ? '1px solid var(--red)' : 'none'};
     background: var(--softpink);
     color:white;
     font-family: 'Fredoka', sans-serif;
@@ -53,9 +54,6 @@ export const StyledCategoryButton = styled.div`
     &:disabled{
         cursor: not-allowed;
         opacity: 0.5%;
-    }
-    &:active {
-        border: 1px solid var(--red);
     }
     
 `

@@ -172,15 +172,8 @@ export const products2 = [
 		name: "You are a Star Necessaire",
 		img: "https://i.pinimg.com/564x/8a/49/f8/8a49f84e29592db24c0b07fb1aec880a.jpg",
 		price: 6,
-		category: "s",
-	},    
-	{
-		id: 26,
-		name: "TESTING",
-		img: "https://i.pinimg.com/564x/8a/49/f8/8a49f84e29592db24c0b07fb1aec880a.jpg",
-		price: 6,
-		category: "testing cat",
-	},    
+		category: "bags",
+	},      
 ]
 
 // Simplifico el array para obtener un solo producto por categoria y luego armo un array solo con las categorias existentes.

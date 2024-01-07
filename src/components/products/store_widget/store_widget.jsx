@@ -4,28 +4,47 @@ import { Button } from "../../button/button";
 import { ProductCard } from "../product_card/product_card";
 import { SellersWrapper } from "./styles";
 import { CategoriesFilter } from "../categories/categories";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setProductLimit } from "../../../store/products/productsSlice";
+
 
 
 export const StoreWidget = () => {
 
+    const selectedCategory = useSelector (state => state.categories.selectedCategory);
     let products = useSelector (state => state.products.products);
+    let limit = useSelector (state => state.products.limit);
+       
+    const dispatch = useDispatch();
+
+    if (selectedCategory) {
+          products =  products.filter ((product) => product.category === selectedCategory) 
+         
+        } ;
+        
 
     return (
         <SellersWrapper>   
-        <CategoriesFilter/>
-        <ProducsContainer>
-            {   
-             products.map ((product) => <ProductCard key={product.id} {...product}/>)
-            }
 
+            <CategoriesFilter/>
+            
+            <ProducsContainer>
+                {   
+                products.slice(0, limit).map ((product) => <ProductCard key={product.id} {...product}/>)
+                
+                }
+            </ProducsContainer>
 
-        </ProducsContainer>
-        <div>
-            <Button 
-            background = "var(--btn-gradient-secondary)" radius="0">See More</Button>
-        </div> 
+            <div>
+                <Button 
+                onClick= {()=> dispatch (setProductLimit ())}
+                background = "var(--btn-gradient-secondary)" radius="0"
+                >
+                    See More {limit}
+                 </Button>   
+            </div> 
         </SellersWrapper>
     )
-}
+};
+
 

@@ -6,6 +6,7 @@ import { CategoriesList } from "../../../data/products/products";
 
 export const CategoriesFilter = () => {
   let categories = useSelector (state => state.categories.categories)
+  
     return ( 
         <CategoriesWidget>
             <h3>Search by category:</h3>
