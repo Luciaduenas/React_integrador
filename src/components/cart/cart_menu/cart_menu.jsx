@@ -5,6 +5,7 @@ import { Button } from "../../button/button";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../../store/cart/cartSlice";
 import { renderModal } from "../../../store/modal/modalSlice";
+import { closeMenu } from "../../../store/menu/menuSlice";
 
 
   
@@ -34,29 +35,31 @@ export const CartMenu = () => {
             </CartMenuProductsContainer>
 
             <Divisor></Divisor>
-
+            
+            {cartItems.length ?(
             <CartTotalContainer>
                 <CartTotal>Total</CartTotal>
-                <Total>{cartTotal}</Total>
+                <Total>{cartTotal} usd</Total>
             </CartTotalContainer>
+            ):null }
 
             <Divisor></Divisor>    
-            
+
+            {cartItems.length ?(
             <CartButtonContainer>
                 <Button 
-                    disabled = {!cartItems.lenght}
                     radius="30" 
                     onClick={() => dispatch(clearCart()) && dispatch(renderModal("All items have been deleted"))}
                     >Clear Cart
                 </Button>
                 <Button 
-                    disabled = {!cartItems.lenght}
                     radius="30" 
                     background="var(--pinkred)"
                     onClick={() => dispatch(clearCart()) && dispatch(renderModal("Your purchase has been confirmed"))}
                     >Buy
                 </Button>
-            </CartButtonContainer>
+            </CartButtonContainer>) 
+            : null }
 
         </CartMenuContainer>
 

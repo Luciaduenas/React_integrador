@@ -39,9 +39,9 @@ export const CartMenuProductsContainer = styled.div `
         p {
                 display: flex;
                 font-family: 'Fredoka', sans-serif;
-                font-size: 15px;  
+                font-size: 25px;  
                 text-align: center;
-                text-overflow: clip;
+        
                 max-width: 60%;
                 color: var(--tangerine);  
     }

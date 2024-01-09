@@ -9,6 +9,10 @@ export const SellersWrapper = styled.div`
     gap: 10px;
     width: 100%;
     padding: 2% 0;
+    p{
+        color: white;
+        font-style: italic;
+    }
 `
 
 

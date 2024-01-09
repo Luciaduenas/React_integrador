@@ -9,6 +9,7 @@ import { toggleHiddenCart } from "../../store/cart/cartSlice";
 import { toggleHiddenMenu, closeMenu } from "../../store/menu/menuSlice";
 import { useDispatch } from "react-redux";
 import { NavbarLinks } from "./navbarLinks";
+import { closeCart } from "../../store/cart/cartSlice";
 
 export const Navbar = () => {
     const dispatch = useDispatch();
@@ -19,14 +20,14 @@ return (
         <NavbarLinksCartContainer>
             <NavbarLinks></NavbarLinks>
         
-            <MenuContainer onClick={() => dispatch(toggleHiddenMenu())}>
+            <MenuContainer onClick={() => dispatch(toggleHiddenMenu()) && dispatch(closeCart())}>
                 <motion.div whileHover={{scale:0.97}}>  
                     <IoMenu />
                 </motion.div>
             </MenuContainer>
             <CartContainer >
                 <motion.div whileHover={{scale:0.97}}>  
-                    <FaShoppingCart onClick={() => dispatch(toggleHiddenCart(), closeMenu())}/>
+                    <FaShoppingCart onClick={() => dispatch(toggleHiddenCart()) && dispatch(closeMenu())}/>
                 </motion.div>
                 <DisplayDiv>
                 <CartMenu/>

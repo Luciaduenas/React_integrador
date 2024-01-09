@@ -37,14 +37,16 @@ export const StoreWidget = () => {
                 
                 }
             </ProducsContainer>
+
             <div>
+            {products.length >= limit ? (
                 <Button 
                 onClick= {()=> dispatch (setProductLimit())}
                 background = "var(--btn-gradient-secondary)" radius="0"
-                disabled={products <= limit}
                 >
-                    See More {limit}
+                    See More
                  </Button>   
+            ) : <p>All products on display</p> }
             </div> 
         </SellersWrapper>
     )
