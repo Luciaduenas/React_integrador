@@ -10,9 +10,14 @@ import { toggleHiddenMenu, closeMenu } from "../../store/menu/menuSlice";
 import { useDispatch } from "react-redux";
 import { NavbarLinks } from "./navbarLinks";
 import { closeCart } from "../../store/cart/cartSlice";
+import { useSelector } from "react-redux";
 
 export const Navbar = () => {
     const dispatch = useDispatch();
+    const totalCartItems = useSelector(state => state.cart.cartItems).reduce(
+        (acc, item) => (acc += item.quantity),
+        0
+      );
 
 return (
     <NavbarContainer>
@@ -28,6 +33,7 @@ return (
             <CartContainer >
                 <motion.div whileHover={{scale:0.97}}>  
                     <FaShoppingCart onClick={() => dispatch(toggleHiddenCart()) && dispatch(closeMenu())}/>
+                    <span>{totalCartItems}</span>
                 </motion.div>
                 <DisplayDiv>
                 <CartMenu/>

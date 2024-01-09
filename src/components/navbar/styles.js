@@ -29,6 +29,16 @@ export const CartContainer = styled.div `
     color: var(--fucsia);
     font-size: 2rem;
     cursor: pointer;
+    span{
+        font-size: 12px;
+        position: relative;
+        left:-8px;
+        top: -25px;
+        background-color: white;
+        border: 1px solid var(--fucsia);
+        border-radius: 1000px;
+        padding: 0.2rem 0.5rem;
+    }
 `
 
 export const DisplayDiv = styled.div` 
