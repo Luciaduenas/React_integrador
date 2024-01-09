@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { NavbarLinks } from "./navbarLinks";
 import { closeCart } from "../../store/cart/cartSlice";
 import { useSelector } from "react-redux";
+import { useRef } from "react";
 
 export const Navbar = () => {
     const dispatch = useDispatch();
@@ -18,6 +19,14 @@ export const Navbar = () => {
         (acc, item) => (acc += item.quantity),
         0
       );
+      
+      const checkwindowSize = () =>{       
+      if (window.innerWidth<=798) {
+        dispatch(closeMenu())
+      }  }
+
+console.log (window.innerWidth)
+
 
 return (
     <NavbarContainer>
@@ -32,7 +41,7 @@ return (
             </MenuContainer>
             <CartContainer >
                 <motion.div whileHover={{scale:0.97}}>  
-                    <FaShoppingCart onClick={() => dispatch(toggleHiddenCart()) && dispatch(closeMenu())}/>
+                    <FaShoppingCart onClick={() => dispatch(toggleHiddenCart()) && checkwindowSize() }/>
                     <span>{totalCartItems}</span>
                 </motion.div>
                 <DisplayDiv>
