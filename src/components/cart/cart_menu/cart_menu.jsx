@@ -3,9 +3,9 @@ import { CartMenuContainer, CartMenuTitle,  Divisor, CartMenuProductsContainer, 
 import { CartProductCard } from "../cart_product_card/cart_product_card";
 import { Button } from "../../button/button";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../../store/cart/cartSlice";
+import { clearCart, closeCart } from "../../../store/cart/cartSlice";
 import { renderModal } from "../../../store/modal/modalSlice";
-import { closeMenu } from "../../../store/menu/menuSlice";
+
 
 
   
@@ -55,7 +55,7 @@ export const CartMenu = () => {
                 <Button 
                     radius="30" 
                     background="var(--pinkred)"
-                    onClick={() => dispatch(clearCart()) && dispatch(renderModal("Your purchase has been confirmed"))}
+                    onClick={() => dispatch(clearCart()) && dispatch(renderModal("Your purchase has been confirmed")) && dispatch (closeCart())}
                     >Buy
                 </Button>
             </CartButtonContainer>) 
