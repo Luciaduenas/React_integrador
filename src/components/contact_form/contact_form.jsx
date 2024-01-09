@@ -8,7 +8,7 @@ import { renderModal } from "../../store/modal/modalSlice";
 
 export const ContactForm = () => {
     const dispatch = useDispatch();
-    const {values, handleChange, handleSubmit, touched, errors } = useFormik({
+    const {values, handleChange, handleSubmit, touched, errors, resetForm } = useFormik({
         initialValues: {
             name: "",
             lastname: "",
@@ -39,6 +39,7 @@ export const ContactForm = () => {
     onSubmit: (values) =>{
         console.log(values);
         dispatch(renderModal("Your message was received"));
+        resetForm ();
         
     },
     
