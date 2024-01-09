@@ -6,12 +6,15 @@ export const CartMenuContainer = styled.div`
         right: 0;
         padding: 20px;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         max-width: 80%;
         max-height: 100vh;
         background-color: white;
         z-index: 2;
         overflow-y: auto;
         max-height: 70vh;
+       
 `
 
 export const CartMenuTitle = styled.h3`
@@ -33,6 +36,15 @@ export const CartMenuProductsContainer = styled.div `
         gap: 10px;
         padding-top: 10px;
         padding-bottom: 10px;
+        p {
+                display: flex;
+                font-family: 'Fredoka', sans-serif;
+                font-size: 15px;  
+                text-align: center;
+                text-overflow: clip;
+                max-width: 60%;
+                color: var(--tangerine);  
+    }
 
 `
 

@@ -9,6 +9,7 @@ import productsReducer from './products/productsSlice'
 import categoriesReducer from "./categories/categoriesSlice";
 import cartReducer from "./cart/cartSlice";
 import menuReducer from "./menu/menuSlice";
+import modalReducer from "./modal/modalSlice";
 
 
 
@@ -24,6 +25,7 @@ const rootReducers = combineReducers({
     products: productsReducer,
     cart: cartReducer,
     menu: menuReducer,
+    modal: modalReducer,
 })
 
 

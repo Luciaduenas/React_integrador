@@ -14,8 +14,9 @@ export const StyledButton = styled.div`
     &:hover{
         opacity:60%;
     }
-    &:disabled{
+    &:disabled {
         cursor: not-allowed;
-        opacity: 0.5%;
-    }
+        background-color: var(--beige-bg);
+        opacity: 0.5;
+  }
 `

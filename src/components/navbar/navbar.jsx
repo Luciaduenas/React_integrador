@@ -24,9 +24,9 @@ return (
                     <IoMenu />
                 </motion.div>
             </MenuContainer>
-            <CartContainer onClick={() => dispatch(toggleHiddenCart(), closeMenu())}>
+            <CartContainer >
                 <motion.div whileHover={{scale:0.97}}>  
-                    <FaShoppingCart/>
+                    <FaShoppingCart onClick={() => dispatch(toggleHiddenCart(), closeMenu())}/>
                 </motion.div>
                 <DisplayDiv>
                 <CartMenu/>

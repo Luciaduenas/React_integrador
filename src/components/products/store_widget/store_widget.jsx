@@ -9,6 +9,7 @@ import { setProductLimit } from "../../../store/products/productsSlice";
 
 
 
+
 export const StoreWidget = () => {
 
     const selectedCategory = useSelector (state => state.categories.selectedCategory);
@@ -21,6 +22,8 @@ export const StoreWidget = () => {
           products =  products.filter ((product) => product.category === selectedCategory) 
          
         } ;
+
+
         
 
     return (
@@ -34,11 +37,11 @@ export const StoreWidget = () => {
                 
                 }
             </ProducsContainer>
-
             <div>
                 <Button 
-                onClick= {()=> dispatch (setProductLimit ())}
+                onClick= {()=> dispatch (setProductLimit())}
                 background = "var(--btn-gradient-secondary)" radius="0"
+                disabled={products <= limit}
                 >
                     See More {limit}
                  </Button>   

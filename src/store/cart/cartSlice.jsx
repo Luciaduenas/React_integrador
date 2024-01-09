@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addItemToCart, removeItemFromCart, resetCartTotal } from "./cart-utils";
+import { addItemToCart, removeItemFromCart } from "./cart-utils";
 
 const INITIAL_STATE = {
     cartItems: [],
-    cartTotal: 0,
     hidden: true,
 }
+
 export const cartSlice = createSlice ({
     name: "cart",
     initialState: INITIAL_STATE,
@@ -19,8 +19,7 @@ export const cartSlice = createSlice ({
         removeFromCart: (state , action) =>{
             return {
                 ...state,
-                cartItems: removeItemFromCart(state.cartItems, action.payload),
-                cartTotal: resetCartTotal(state.cartItems, state.cartTotal)
+                cartItems: removeItemFromCart(state.cartItems, action.payload)
             }
 
         },
@@ -28,10 +27,9 @@ export const cartSlice = createSlice ({
             return{
                 ...state,
                 cartItems:[],
-                cartTotal: 0,
             }
         },
-        toggleHiddenCart: (state , action) =>{
+        toggleHiddenCart: (state ) =>{
             return{
                 ...state,
                 hidden: !state.hidden,

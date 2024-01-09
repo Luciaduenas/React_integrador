@@ -29,8 +29,24 @@ export const StyledInput = styled.input`
     font-size: 18px;
     font-family: 'Fredoka', sans-serif;
     ::placeholder{
-        color: var(--fucsia);
         font-family: 'Fredoka', sans-serif;
+        color: var(--fucsia);
+        font-size: 18px;
+        font-weight: 400;
+        padding: 10px;
+    }
+`
+
+export const StyledErrorMessage = styled.p`
+    border-radius: 1rem;
+    font-size: 18px;
+    color: var(--fucsia);
+    padding: 2px 10px 10px;
+    font-size: 18px;
+    font-family: 'Fredoka', sans-serif;
+    ::placeholder{
+        font-family: 'Fredoka', sans-serif;
+        color: var(--fucsia);
         font-size: 18px;
         font-weight: 400;
         padding: 10px;

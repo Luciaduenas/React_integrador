@@ -28,6 +28,19 @@ export const CartProductImg = styled.img`
         display: none;
         };
 `
+
+export const CartQuantityContainer = styled.div `
+   display: flex;
+   align-items: center;
+   gap:7px;
+   p {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 12px;    
+        color: var(--pink);  
+    }
+    
+`
+
 export const CartPriceContainer = styled.div `
    display: flex;
    align-items: center;
@@ -37,4 +50,15 @@ export const CartPriceContainer = styled.div `
         color: var(--pink);  
     }
 
+`
+export const StyledQtyButton = styled.button `
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    font-size: 8px;    
+    font-weight: 800;
+    color: var(--fucsia);  
+    background-color: white;
+    padding: 0.2rem 0.4rem;
+    border: solid 1px var(--fucsia);
+    border-radius: 5px;
 `

@@ -13,10 +13,10 @@ export const productsSlice = createSlice({
         getProducts: state => {
             return state;
         },
-        setProductLimit: (state) => {
+        setProductLimit: (state, action) => {
             return {
                 ...state,
-                limit: limit+3,
+                limit: state.limit+3,
             }
             }
         },
