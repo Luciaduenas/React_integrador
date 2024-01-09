@@ -1,8 +1,8 @@
-# React + Vite
+# Happy Colors Online Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+REACT | REACT TOOLKIT | REACT PERSIST | REACT ROUTES | FORMIK | STYLED COMPONENTS | FRAMER MOTION 
 
-Currently, two official plugins are available:
+ Brief: Creat an online store with home page, online shop, contact form page, about page and a Working Cart using react persist. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ 
+
